@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [Header("Zoom System")]
     [SerializeField] private float minZoomDist;
     [SerializeField] private float maxZoomDirt;
     [SerializeField] private float zoomSpeed;
     [SerializeField] private float zoomModifier;
+
+    [Header("Camera Move")] 
+    [SerializeField] private float moveSpeed = 150f;
 
     private Camera _camera;
 
@@ -20,6 +24,7 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         Zoom();
+        MoveByKB();
     }
 
     private void Zoom()
@@ -47,5 +52,15 @@ public class CameraController : MonoBehaviour
         }
 
         _camera.transform.position += _camera.transform.forward * zoomModifier * zoomSpeed;
+    }
+
+    private void MoveByKB()
+    {
+        float xInput = Input.GetAxis("Horizontal");
+        float zInput = Input.GetAxis("Vertical");
+
+        Vector3 dirMove = transform.forward * zInput + transform.right * xInput;
+
+        transform.position += dirMove * moveSpeed * Time.deltaTime;
     }
 }
