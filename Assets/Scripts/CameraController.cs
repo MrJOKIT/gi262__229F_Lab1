@@ -28,6 +28,15 @@ public class CameraController : MonoBehaviour
 
         float dist = Vector3.Distance(this.transform.position, _camera.transform.position);
 
+        if (Input.GetKey(KeyCode.Z))
+        {
+            zoomModifier = 0.01f;
+        }
+        else if (Input.GetKey(KeyCode.X))
+        {
+            zoomModifier = -0.01f;
+        }
+
         if (dist < minZoomDist && zoomModifier > 0f) 
         {
             return;
