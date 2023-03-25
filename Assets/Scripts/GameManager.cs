@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
             
             
             farmer.InitCharID(i);
+            farmer.ChangeCharSkin();
+            
+            farmer.SetToWalk(rallryPos.transform.position);
         }
     }
 }
