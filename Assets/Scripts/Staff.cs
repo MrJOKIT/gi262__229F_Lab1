@@ -11,6 +11,10 @@ public enum UniteState
 {
     Idle,
     Walk,
+    Harvest,
+    Plow,
+    Sow,
+    Water,
 }
 public class Staff : MonoBehaviour
 {

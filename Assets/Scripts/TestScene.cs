@@ -15,4 +15,24 @@ public class TestScene : MonoBehaviour
     {
         staff.State = UniteState.Walk;
     }
+
+    public void ButtonPlow()
+    {
+        staff.State = UniteState.Plow;
+    }
+
+    public void ButtonWater()
+    {
+        staff.State = UniteState.Water;
+    }
+
+    public void ButtonSow()
+    {
+        staff.State = UniteState.Sow;
+    }
+
+    public void ButtonHarvest()
+    {
+        staff.State = UniteState.Harvest;
+    }
 }
