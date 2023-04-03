@@ -26,6 +26,26 @@ public class StaffAnimation : MonoBehaviour
             DisableAll();
             anim.SetBool("isWalk",true);
         }
+        else if (staff.State == UniteState.Harvest)
+        {
+            DisableAll();
+            anim.SetBool("isHarvest",true);
+        }
+        else if (staff.State == UniteState.Sow)
+        {
+            DisableAll();
+            anim.SetBool("isSow",true);
+        }
+        else if (staff.State == UniteState.Water)
+        {
+            DisableAll();
+            anim.SetBool("isWater",true);
+        }
+        else if (staff.State == UniteState.Plow)
+        {
+            DisableAll();
+            anim.SetBool("isPlow",true);
+        }
         
     }
 
@@ -33,5 +53,9 @@ public class StaffAnimation : MonoBehaviour
     {
         anim.SetBool("isIdle",false);
         anim.SetBool("isWalk",false);
+        anim.SetBool("isPlow",false);
+        anim.SetBool("isWater",false);
+        anim.SetBool("isHarvest",false);
+        anim.SetBool("isSow",false);
     }
 }

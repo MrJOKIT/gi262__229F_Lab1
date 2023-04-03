@@ -10,12 +10,23 @@ public class GameManager : MonoBehaviour
     public GameObject staffParent;
     public GameObject spawmPos;
     public GameObject rallryPos;
-
+    
+    //resource
+    public int money;
+    public int staff;
+    public int wheat;
+    public int melon;
+    public int corn;
+    public int apple;
+    
     public static GameManager instance;
 
     private void Start()
     {
+        instance = this;
         GenerateCamdidate();
+        money = 25000;
+        UI.instance.UpdateHeaderPanel();
     }
 
     private void GenerateCamdidate()
