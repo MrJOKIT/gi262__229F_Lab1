@@ -11,12 +11,15 @@ public class StuctureManager : MonoBehaviour
     public GameObject buildingParent;
 
     [SerializeField] private Vector3 cursorPos;
+
+    [SerializeField] private Transform instancePos;
     [SerializeField] private GameObject buildCursor;
     [SerializeField] private GameObject gridPlane;
 
     private void Update()
     {
         cursorPos = Selector.instance.GetCurrentTilePosition();
+        
 
         if (isConstructing)
         {
@@ -33,4 +36,11 @@ public class StuctureManager : MonoBehaviour
         buildCursor = Instantiate(curBuildingPrefeb, cursorPos, Quaternion.identity);
         buildCursor.SetActive(true);
     }
+
+    public void SetInstancePos()
+    {
+        var insPos = instancePos.transform.position;
+        cursorPos = new Vector3(insPos.x, insPos.y, insPos.z);
+    }
+    
 }
