@@ -14,23 +14,29 @@ public class UI : MonoBehaviour
     public TMP_Text melonText;
     public TMP_Text cornText;
     public TMP_Text appleText;
+    public TMP_Text sellText;
+
+    public GameObject FarmPanel;
     private void Awake()
     {
         instance = this;
     }
-
-    private void Update()
-    {
-       
-    }
+    
 
     public void UpdateHeaderPanel()
     {
         moneyText.text = GameManager.instance.money.ToString();
-        staffText.text = GameManager.instance.staff.ToString();
+        staffText.text = GameManager.instance.staff.Count.ToString();
         wheatText.text = GameManager.instance.wheat.ToString();
         melonText.text = GameManager.instance.melon.ToString();
         cornText.text = GameManager.instance.corn.ToString();
         appleText.text = GameManager.instance.apple.ToString();
+        sellText.text = GameManager.instance.sellAmount.ToString();
     }
+    
+    public void ToggleFarmPanel(bool flag)
+    {
+        FarmPanel.SetActive(flag);
+    }
+
 }

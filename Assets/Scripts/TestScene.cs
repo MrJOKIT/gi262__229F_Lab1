@@ -8,31 +8,31 @@ public class TestScene : MonoBehaviour
 
     public void ButtonIdle()
     {
-        staff.State = UniteState.Idle;
+        staff.State = UnitState.Idle;
     }
 
     public void ButtonWalk()
     {
-        staff.State = UniteState.Walk;
+        staff.State = UnitState.Walk;
     }
 
     public void ButtonPlow()
     {
-        staff.State = UniteState.Plow;
+        staff.State = UnitState.Plow;
     }
 
     public void ButtonWater()
     {
-        staff.State = UniteState.Water;
+        staff.State = UnitState.Water;
     }
 
     public void ButtonSow()
     {
-        staff.State = UniteState.Sow;
+        staff.State = UnitState.Sow;
     }
 
     public void ButtonHarvest()
     {
-        staff.State = UniteState.Harvest;
+        staff.State = UnitState.Harvest;
     }
 }
